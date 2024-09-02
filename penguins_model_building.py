@@ -26,11 +26,11 @@ for col in encode:
     df = pd.concat([df, dummy], axis=1) #axis=1 - столбец
     del df[col]
 
-target_mapper = {'Adelie': 0, 'Chinstrap': 1, 'Gentoo': 2}
+target_mapper = {'Adelie':0, 'Chinstrap':1, 'Gentoo':2}
 def target_encode(val):
     return target_mapper[val]
 
-df['species'] = df.apply(target_encode)
+df['species'] = df['species'].apply(target_encode)
 
 #Выделяем тренировочный датасет без целевой переменной
 # (X - input, Y - output)
