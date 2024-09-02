@@ -30,7 +30,7 @@ target_mapper = {'Adelie':0, 'Chinstrap':1, 'Gentoo':2}
 def target_encode(val):
     return target_mapper[val]
 
-df['species'] = df['species'].apply(target_encode)
+df['species'] = df['species'].apply(target_encode) 
 
 #Выделяем тренировочный датасет без целевой переменной
 # (X - input, Y - output)
@@ -44,4 +44,4 @@ clf.fit(X,Y)
 
 
 #Сохраняем модель
-pickle.dump(clf, open('penguins_cls.pkl', 'wb'))
+pickle.dump(clf, open('penguins_clf.pkl', 'wb'))
